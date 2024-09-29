@@ -1,0 +1,54 @@
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.forms,.list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.data{
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 20%;
+    height: 30px;
+    font-size: large;
+    font-weight: bold;
+}
+.add{
+    border-radius: 5px;
+    font-size: large;
+    height: 35px;
+    background-color:cornflowerblue;
+    font-weight: bold;
+
+}
+
+.todolist{
+    margin-right: 10px;
+    font-family: bold;
+    font-size: x-large;
+    text-decoration: line-through
+
+}
+
+.listtodo{
+    margin-right: 10px;
+    font-family: bold;
+    font-size: x-large;
+}
+
+.remove,.edit{
+    border-radius: 5px;
+    font-size: large;
+    height: 35px;
+    background-color:cornflowerblue;
+    font-weight: bold;
+}
+
+.disapper{
+    display: none;
+}

@@ -1,0 +1,60 @@
+.verification-container{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100vh !important;
+    /* color: white !important; */
+    /* border: 5px solid rgb(5, 5, 5) !important; */
+    background-image: url("../../login-bi.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.input{
+    display: flex;
+    justify-content: center;
+    /* margin-top: 10px; */
+}
+.verification-input{
+    width: 80%;
+}
+.verification-input input{
+    background-color: rgba(255, 255, 255, 0.048);
+    width: 60%;
+    border-radius: 10%;
+    color: black;
+    font:bold;
+    font-size: large;
+    /* border: 2px solid black; */
+}
+
+.verification{
+    height: 80%;
+    width: 40%;
+    border: 4px solid black;
+    border-radius: 10%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    
+}
+.verify{
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    
+}
+.resend{
+    font-weight: bold;
+}
+.button-div{
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+.buttonCss{
+    color:black !important;
+    background-color: white !important;
+}

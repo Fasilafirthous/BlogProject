@@ -1,0 +1,8 @@
+.profile-popover {
+    width: 87px;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    margin: 0px 20px 0px 10px;
+    cursor: pointer;
+}
