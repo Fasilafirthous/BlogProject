@@ -1,0 +1,163 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Blog {
+  blogContent: String!
+  blogTitle: String!
+  createdAt: DateTime!
+  deletedAt: DateTime
+
+  """Example field (placeholder)"""
+  id: String!
+  updatedAt: DateTime!
+  user: User
+  userId: String
+}
+
+input CreateBlogInput {
+  blogContent: String!
+  blogTitle: String!
+}
+
+input CreateUserInput {
+  email: String!
+  password: String!
+  profileUrl: String
+  username: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Mutation {
+  createBlog(createBlogInput: CreateBlogInput!): Blog!
+  createUser(createUserInput: CreateUserInput!): User!
+  removeBlog(id: Int!): Blog!
+  removeUser(id: Int!): User!
+  updateBlog(updateBlogInput: UpdateBlogInput!): Blog!
+  updateProfile(updateProfile: UpdateUserInput!): String!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+}
+
+type Query {
+  blog(id: Int!): Blog!
+  changePassword(email: String!, newPassword: String!, oldPassword: String!): String!
+  findAll: [User!]!
+  findByEmail(email: String!): User!
+  getCurrentUser: User!
+
+  """This API is used to get the upload id"""
+  getMultipartUpload(
+    bucketName: String!
+
+    """The location where the file should be uploaded in S3 Bucket"""
+    key: String!
+  ): String!
+
+  """This API is used to get the presigned url for delete file from S3."""
+  getSignedUrlForDelete(
+    bucketName: String!
+
+    """The location where the file stored in S3 Bucket"""
+    key: String!
+  ): String!
+
+  """
+  This API is used to get the presigned URL for download the file from S3 Bucket. We will not be having permission to download the file directly from S3.
+  """
+  getSignedUrlForDownload(
+    bucketName: String!
+
+    """The location where the file should be downloaded from S3 Bucket"""
+    key: String!
+  ): String!
+
+  """
+  This API is used to get the presigned URL for upload the file from S3 Bucket with parts and upload id
+  """
+  getSignedUrlForMultipartUpload(
+    bucketName: String!
+
+    """The location where the file should be uploaded in S3 Bucket"""
+    key: String!
+
+    """The part number"""
+    partNumber: Int!
+
+    """The upload id"""
+    uploadId: String!
+  ): String!
+
+  """
+  This API is used to get the presigned URL for upload the file to S3 Bucket. We will not be having permission to upload the file directly to S3.
+  """
+  getSignedUrlForUpload(
+    bucketName: String!
+
+    """The location where the file should be uploaded in S3 Bucket"""
+    key: String!
+  ): String!
+  getallBlogs: [Blog!]!
+  login(password: String!, username: String!): TokenResponse!
+  resendCode(email: String!): String!
+
+  """This API is used to delete the file in S3 bucket."""
+  s3FileDelete(
+    bucketName: String!
+
+    """The location where the file stored in S3 Bucket"""
+    key: String!
+  ): String!
+
+  """This API is used to delete the multiple files in S3 bucket."""
+  s3MultipleFileDelete(
+    bucketName: String!
+
+    """s3 object Key"""
+    key: [String!]!
+  ): String!
+  user(id: String!): User!
+  verifySignUpCode(code: String!, email: String!): String!
+}
+
+type TokenResponse {
+  AccessToken: String!
+  RefreshToken: String!
+}
+
+input UpdateBlogInput {
+  blogContent: String
+  blogTitle: String
+  id: Int!
+}
+
+input UpdateUserInput {
+  id: String!
+  newPassword: String
+  password: String
+  profileUrl: String
+  username: String
+}
+
+type User {
+  blog: [Blog!]
+  cognitoId: String!
+  createdAt: DateTime!
+  deletedAt: DateTime
+  email: String!
+
+  """Example field (placeholder)"""
+  id: String!
+  profileUrl: String!
+  role: UserRole!
+  updatedAt: DateTime!
+  userName: String!
+}
+
+enum UserRole {
+  ADMIN
+  USER
+}
